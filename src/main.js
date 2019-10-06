@@ -1,6 +1,5 @@
 Vue.use(VueRouter);
 
-// const Content =  httpVueLoader('components/con-tent.vue')
 const Content =  httpVueLoader('./src/components/con-tent.vue')
 const Contactus =  httpVueLoader('./src/components/contact-us.vue')
 const About =  httpVueLoader('./src/components/a-bout.vue')
