@@ -29,6 +29,7 @@
 				<li><a href="/#/handover"><span data-uk-icon="icon: move" class="uk-margin-small-right"></span>Handover</a></li>
 				<li><a href="/#/contactus"><span data-uk-icon="icon: comments" class="uk-margin-small-right"></span>Contact Us</a></li>
 				<li><a href="/#/About"><span data-uk-icon="icon: users" class="uk-margin-small-right"></span>About</a></li>
+				<li><a href="/#/project_sa"><span data-uk-icon="icon: move" class="uk-margin-small-right"></span>Project SA</a></li>
 			</ul>
 		<div class="bar-bottom">
 			<ul class="uk-subnav uk-flex uk-flex-center uk-child-width-1-5" data-uk-grid>

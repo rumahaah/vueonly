@@ -5,6 +5,7 @@ const Contactus =  httpVueLoader('./src/components/contact-us.vue')
 const About =  httpVueLoader('./src/components/a-bout.vue')
 const Dashboard =  httpVueLoader('./src/components/dash-board.vue')
 const Handover =  httpVueLoader('./src/components/hand-over.vue')
+const ProjectSA =  httpVueLoader('./src/components/project-sa.vue')
 
 const router = new VueRouter({
  routes:[
@@ -13,6 +14,7 @@ const router = new VueRouter({
  { path:'/contactus', component: Contactus },
  { path:'/dashboard', component: Dashboard },
  { path:'/handover', component: Handover },
+ { path:'/project_sa', component: ProjectSA },
  ]
 });
 
