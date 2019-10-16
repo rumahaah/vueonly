@@ -20,14 +20,14 @@
 					</thead>
 					<tbody>
 						<tr v-for="project in project_sa" :key="project.oppty_id">
-							<td>{{project.jm | currency}}</td>
+							<td>{{project.tcv | currency}}</td>
 							<td>{{project.customer}}</td>
 							<td>{{project.project_name}}</td>
 							<td>{{project.sa}}</td>
 							<td>{{project.pss}}</td>
 							<td>{{project.jm}}</td>
 							<td>{{project.bigco}}</td>
-							<td>{{project.progress}}</td>
+							<td>{{project.project_status}}</td>
 							<td>{{countAja2(project)}}</td>
 							<td>{{jikaSaja(project)}}</td>
 						</tr>
@@ -46,67 +46,100 @@
 </template>
 
 <script>
-	 Vue.filter('currency', function (money) {
-     return accounting.formatMoney(money, "Rp ", 2, ".", ",")
-	 })
+	// import states from "./src/apa.json";
+	// import json from './src/apa.json'
+	// export default{
+	//     data(){
+	//         return{
+	//             projectsa: json
+	//         }
+	//     }
+	// }
+	Vue.filter('currency', function (money) {
+    	return accounting.formatMoney(money, "Rp ", 2, ".", ",")
+	})
 	module.exports = {
 		data: function() {
 			return {
 				// total: [],
+				// project_sa: projectsa,
 				project_sa: [
-				  {
-				    "customer": "B",
-				    "project_name": "proyek bbb",
-				    "oppty_id": "00690000016RVfF",
-				    "remark": "Tidak ada update dari Sales",
-				    "sa": "MBO",
-				    "sales": "oi",
-				    "pss": "BRD",
-				    "bigco": 1,
-				    "progress": "Cancelled",
-				    "product": "ITS",
-				    "taxsonomi": "Sec&Col",
-				    "payment_type": "MRC",
-				    "psa_pca": 4,
-				    "total_ho_pm": 2,
-				    "sla_psa_pca": "fulfilled",
-				    "sla_ho_pm": "fulfilled",
-				    "acv": 0,
-				    "tcv": 0,
-				    "jm": 10000,
-				    "sales_dept": "hiks",
-				    "division": "SRPI",
-				    "total_opex": 0,
-				    "total_cos": 0
-				  },
-				  {
-				    "customer": "A",
-				    "project_name": "proyek aaa",
-				    "oppty_id": "0062v000015cS1o",
-				    "remark": "Belum ada update dr PSS",
-				    "sa": "MBO",
-				    "sales": "au",
-				    "pss": "NHR",
-				    "bigco": 0,
-				    "progress": "Cancelled",
-				    "product": "ITS",
-				    "taxsonomi": "Datacom",
-				    "payment_type": "MRC",
-				    "psa_date": 43515,
-				    "ho_psa_to_pca": 43517,
-				    "pca_date": 43517,
-				    "psa_pca": 10,
-				    "total_ho_pm": 3,
-				    "sla_psa_pca": "fulfilled",
-				    "sla_ho_pm": "fulfilled",
-				    "acv": 0,
-				    "tcv": 0,
-				    "jm": 14500,
-				    "sales_dept": "hoks",
-				    "division": "SRPI",
-				    "total_opex": 0,
-				    "total_cos": 0
-				  }
+				   {
+				     "customer": "B",
+				     "project_name": "proyek bbb",
+				     "oppty_id": "00690000016RVfF",
+				     "remark": "Tidak ada update dari Sales",
+				     "problem": 1,
+				     "sa": "MBO",
+				     "sales": "oi",
+				     "pss": "BRD",
+				     "project_status": 1,
+				     "solution_criteria": 1,
+				     "bigco": 1,
+				     "progress": "Cancelled",
+				     "product": "ITS",
+				     "taxsonomi": "Sec&Col",
+				     "payment_type": "MRC",
+				     "psa_pca": 9,
+				     "sla_psa_pca": "fulfilled",
+				     "doc_psa_recieved_by_sa": 1,
+				     "po_doc_date": 1,
+				     "po_know_date": 1,
+				     "initial_ho_date": 1,
+				     "approved_ho_date": 1,
+				     "total_ho_pm": 1,
+				     "sla_ho_pm": "fulfilled",
+				     "ebitda": 1,
+				     "irr": 1,
+				     "otx": 1,
+				     "mrc": 1,
+				     "contract_lenght": 1,
+				     "acv": 0,
+				     "tcv": 20463345,
+				     "jm": "RHT",
+				     "sales_dept": "hiks",
+				     "division": "SRPI",
+				     "dco_or_pm": 1,
+				     "capex": 1,
+				     "internal_opex": 1,
+				     "external_opex": 1,
+				     "total_opex": 0,
+				     "cos_internal": 1,
+				     "cos_external": 1,
+				     "total_cos": 0,
+				     "ketepatan_menyusun_bc_1": 1,
+				     "ketepatan_menyusun_bc_2": 1
+				   },
+				   {
+				     "customer": "A",
+				     "project_name": "proyek aaa",
+				     "oppty_id": "0062v000015cS1o",
+				     "remark": "Belum ada update dr PSS",
+				     "sa": "MBO",
+				     "sales": "au",
+				     "pss": "NHR",
+				     "bigco": 0,
+				     "progress": "Cancelled",
+				     "product": "ITS",
+				     "taxsonomi": "Datacom",
+				     "payment_type": "MRC",
+				     "psa_date": 43515,
+				     "ho_psa_to_pca": 43517,
+				     "pca_date": 43517,
+				     "psa_pca": 12,
+				     "sla_psa_pca": "fulfilled",
+				     "total_ho_pm": 2,
+				     "sla_ho_pm": "fulfilled",
+				     "acv": 0,
+				     "tcv": 0,
+				     "jm": "RHT",
+				     "sales_dept": "hoks",
+				     "division": "SRPI",
+				     "total_opex": 0,
+				     "total_cos": 0,
+				     "tcv": 1000000
+
+				   }
 				],
 			}
 		},
